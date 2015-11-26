@@ -1,28 +1,13 @@
-== README
+# Break Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Create a rails application of your choosing over break. The requirements are as follows:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+- At least two models that have some sort of relationship to one another
+- At least two controllers that handle actions for the two models
+- The basic set of CRUD operations associated with each models (if you want to exclude one of these for contextual purposes, that is fine as well, as long as it makes sense)
+  - This requires routes, views, controller methods, etc.
+- You should incorporate good markup practices for your views and incorporate some amount of CSS for a pleasant visual presentation
+- Pushed to GitHub
+  - This should be a *new* repository set up under your own GitHub account
+    - See: `git init` and `New Repository` functionality on GitHub
+  - You should have regular commits and meaningful commit messages
