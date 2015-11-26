@@ -1,5 +1,5 @@
 <% @reading_lists.each do |rl| %>
 <p>
-  <%= rl.name %>
+  <a href="/reading_lists/<%= rl.id %>"><%= rl.name %></a>
 </p>
 <% end %>

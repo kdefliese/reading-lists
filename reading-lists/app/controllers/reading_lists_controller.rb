@@ -20,6 +20,7 @@ class ReadingListsController < ApplicationController
   def show
     id = params[:id]
     @reading_list = ReadingList.find(id)
+    @books = @reading_list.books
   end
 
   def update

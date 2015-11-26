@@ -1,3 +1,11 @@
 <p>
   <%= @reading_list.name %>
+  <% @books.each do |book| %>
+    <p>
+      <%= book.title %>
+      <%= book.author %>
+      <%= book.read_status %>
+      <%= book.genre %>
+    </p>
+  <% end %>
 </p>
