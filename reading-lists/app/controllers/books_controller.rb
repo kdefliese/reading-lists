@@ -9,7 +9,7 @@ class BooksController < ApplicationController
 
   def create
     Book.create(book_params[:book])
-    redirect_to "/"
+    redirect_to "/books"
   end
 
   def edit
@@ -37,7 +37,7 @@ class BooksController < ApplicationController
   def destroy
     id = params[:id]
     Book.destroy(id)
-    redirect_to "/"
+    redirect_to "/books"
   end
 
   private
