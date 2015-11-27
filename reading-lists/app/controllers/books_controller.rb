@@ -25,13 +25,22 @@ class BooksController < ApplicationController
   def update
     id = params[:id]
     @book = Book.find(id)
-    @book.update(
-      title: book_params[:book][:title],
-      author: book_params[:book][:author],
-      read_status: book_params[:book][:read_status],
-      genre: book_params[:book][:genre]
-      )
-    redirect_to "/"
+    if book_params[:book][:read_status] == "true"
+      @book.update(
+        title: book_params[:book][:title],
+        author: book_params[:book][:author],
+        read_status: true,
+        genre: book_params[:book][:genre]
+        )
+    else
+      @book.update(
+        title: book_params[:book][:title],
+        author: book_params[:book][:author],
+        read_status: false,
+        genre: book_params[:book][:genre]
+        )
+    end
+    redirect_to "/books"
   end
 
   def destroy
@@ -43,6 +52,13 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.permit(book:[:name])
+    params.permit(book:[:title, :author, :genre, :read_status])
   end
+
+  def to_bool(input)
+    return true if input == "true"
+    return false if input == "false"
+    return nil
+  end
+
 end
