@@ -1,6 +1,14 @@
+<h1><%= @book.title %></h1>
+<h2><%= @book.author %></h2>
+<% if @book.read_status == true %>
+  <p>
+    read
+  </p>
+<% else %>
+  <p>
+    unread
+  </p>
+<% end %>
 <p>
-  <%= @book.title %>
-  <%= @book.author %>
-  <%= @book.read_status %>
-  <%= @book.genre %>
+  Genre: <%= @book.genre %>
 </p>

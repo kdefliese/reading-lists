@@ -1,6 +1,6 @@
 <% @books.each do |b| %>
 <p>
-  <%= b.title %>
+  <a href="/books/<%= b.id %>"><%= b.title %></a>
   <%= b.author %>
   <%= b.read_status %>
   <%= b.genre %>
