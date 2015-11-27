@@ -25,21 +25,12 @@ class BooksController < ApplicationController
   def update
     id = params[:id]
     @book = Book.find(id)
-    if book_params[:book][:read_status] == "true"
       @book.update(
         title: book_params[:book][:title],
         author: book_params[:book][:author],
-        read_status: true,
+        read_status: params[:read_status],
         genre: book_params[:book][:genre]
         )
-    else
-      @book.update(
-        title: book_params[:book][:title],
-        author: book_params[:book][:author],
-        read_status: false,
-        genre: book_params[:book][:genre]
-        )
-    end
     redirect_to "/books"
   end
 
@@ -53,12 +44,6 @@ class BooksController < ApplicationController
 
   def book_params
     params.permit(book:[:title, :author, :genre, :read_status])
-  end
-
-  def to_bool(input)
-    return true if input == "true"
-    return false if input == "false"
-    return nil
   end
 
 end
