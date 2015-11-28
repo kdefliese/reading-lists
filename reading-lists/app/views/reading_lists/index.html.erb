@@ -1,14 +1,14 @@
 <nav>
   <h1>
-    Reading Lists
+    READING LISTS
   </h1>
-  <a href="/reading_lists/new">New reading list</a>
-  <a href="/books/">View books</a>
+  <a href="/reading_lists/new">NEW LIST</a>
+  <a href="/books/">VIEW BOOKS</a>
 </nav>
 <div class="container">
   <% @reading_lists.each do |rl| %>
   <h1>
-    <a href="/reading_lists/<%= rl.id %>"><%= rl.name %></a>
+    <a href="/reading_lists/<%= rl.id %>"><%= rl.name.upcase %></a>
     <%= button_to "Delete", "/reading_lists/#{rl.id}",  method: :delete, data: { confirm: "Are you sure you want to delete this reading list?" } , class: 'x-button' %>
   </h1>
   <% end %>

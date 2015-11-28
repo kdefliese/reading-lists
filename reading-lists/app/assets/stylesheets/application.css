@@ -28,12 +28,21 @@ body {
   font-family: Shadows Into Light;
 }
 
+h1 {
+  text-align: left;
+  font-weight: bold;
+  color: #cc9a66;
+  font-family: Shadows Into Light;
+}
+
 nav {
   background-color: #000000;
   color: #ffffff;
   margin: 0;
-  padding: 50px 0px 20px;
-  text-align: right;
+  padding: 30px 0px 10px;
+  font-family: Shadows Into Light;
+  font-weight: bold;
+  color: #cc9a66;
 }
 
 a {
@@ -42,16 +51,14 @@ a {
 }
 
 nav a {
-  font-family: Verdana;
-  font-weight: bold;
   padding: 10px;
   color: #cc9a66;
+  font-size: 24px;
 }
 
 nav h1 {
   display: inline;
-  text-align: left;
-  font-weight: bold;
-  color: #cc9a66;
-  font-family: Shadows Into Light;
+  padding-right: 50%;
+  padding-left: 2%;
+  font-size: 48px;
 }
