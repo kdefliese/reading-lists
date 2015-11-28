@@ -1,5 +1,5 @@
 <div class="container">
-  <h1><%= @reading_list.name %></h1>
+  <h1><%= @reading_list.name.upcase %></h1>
   <% @books.each do |book| %>
     <p>
       <a href="/books/<%= book.id %>"><%= book.title %></a>

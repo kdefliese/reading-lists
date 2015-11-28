@@ -28,16 +28,8 @@ body {
   font-family: Shadows Into Light;
 }
 
-h1 {
-  text-align: left;
-  font-weight: bold;
-  color: #cc9a66;
-  font-family: Shadows Into Light;
-}
-
 nav {
   background-color: #000000;
-  color: #ffffff;
   margin: 0;
   padding: 30px 0px 10px;
   font-family: Shadows Into Light;
@@ -61,4 +53,30 @@ nav h1 {
   padding-right: 50%;
   padding-left: 2%;
   font-size: 48px;
+}
+
+.x-button {
+  font-family: Shadows Into Light;
+  background-color: #000000;
+  color: #cc9a66;
+  display: inline!important;
+  font-size: 24px;
+}
+
+form {
+  display: inline!important;
+}
+
+.delete {
+  float: right;
+}
+
+h1 {
+  display: inline;
+}
+
+hr {
+  color: #000000;
+  background-color: #000000;
+  border-color: #000000;
 }
