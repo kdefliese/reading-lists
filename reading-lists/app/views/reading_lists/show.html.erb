@@ -1,16 +1,24 @@
+<nav>
+  <h1>
+    <%= @reading_list.name.upcase %>
+  </h1>
+  <a href="/reading_lists/<%= @reading_list.id %>/edit">EDIT LIST</a>
+  <a href="/books/">VIEW ALL BOOKS</a>
+</nav>
 <div class="container">
-  <h1><%= @reading_list.name.upcase %></h1>
   <% @books.each do |book| %>
-    <p>
+    <h1>
       <a href="/books/<%= book.id %>"><%= book.title %></a>
-      <br />
+    </h1>
+    <h2>
       <%= book.author %>
-    </p>
-    <p>
-      <%= book.read_status %>
+    </h2>
+    <p class="read_status">
+      <%if book.read_status == true %>
+        read
+      <% else %>
+        unread
+      <% end %>
     </p>
   <% end %>
-  <p>
-    <a href="/reading_lists/<%= @reading_list.id %>/edit">Edit reading list</a>
-  </p>
 </div>

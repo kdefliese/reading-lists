@@ -50,7 +50,7 @@ nav a {
 
 nav h1 {
   display: inline;
-  padding-right: 50%;
+  padding-right: 45%;
   padding-left: 2%;
   font-size: 48px;
 }
@@ -75,8 +75,16 @@ h1 {
   display: inline;
 }
 
+h2 {
+  margin: 0;
+}
+
 hr {
   color: #000000;
   background-color: #000000;
   border-color: #000000;
+}
+
+.read_status {
+  font-style: italic;
 }
