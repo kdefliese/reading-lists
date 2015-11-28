@@ -1,17 +1,23 @@
+<nav>
+  <h1>
+    BOOKS
+  </h1>
+  <a href="/books/new">NEW BOOK</a>
+  <a href="/reading_lists/">VIEW READING LISTS</a>
+</nav>
 <div class="container">
   <% @books.each do |b| %>
-  <p>
-    <a href="/books/<%= b.id %>"><%= b.title %></a>
+  <h1>
+    <a href="/books/<%= b.id %>"><%= b.title %></a> -
+  </h1>
+  <h2>
     <%= b.author %>
-    <%= b.read_status %>
-    <%= b.genre %>
-  </p>
-  <%= button_to "Delete", "/books/#{b.id}",  method: :delete, data: { confirm: "Are you sure you want to delete this book?" } , class: 'x-button' %>
+  </h2>
+  <span class="delete"
+    <%= button_to "Delete", "/books/#{b.id}",  method: :delete, data: { confirm: "Are you sure you want to delete this book?" } , class: 'x-button' %>
+  </span>
+  <br />
+  <hr>
+  <br />
   <% end %>
-  <p>
-    <a href="/books/new">Add new book</a>
-  </p>
-  <p>
-    <a href="/reading_lists/">View reading lists</a>
-  </p>
 </div>
