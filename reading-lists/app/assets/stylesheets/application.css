@@ -63,8 +63,16 @@ nav h1 {
   font-size: 24px;
 }
 
+.new_button {
+  font-family: Shadows Into Light;
+  background-color: #000000;
+  color: #cc9a66;
+  font-size: 24px;
+}
+
 form {
   display: inline!important;
+  font-size: 24px;
 }
 
 .delete {
