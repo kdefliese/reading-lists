@@ -1,9 +1,15 @@
-<% @reading_lists.each do |rl| %>
-<p>
-  <a href="/reading_lists/<%= rl.id %>"><%= rl.name %></a>
-  <%= button_to "Delete", "/reading_lists/#{rl.id}",  method: :delete, data: { confirm: "Are you sure you want to delete this reading list?" } , class: 'x-button' %>
-</p>
-<% end %>
-<p>
-  <a href="/reading_lists/new">Create new reading list</a>
-</p>
+<nav>
+  <h1>
+    Reading Lists
+  </h1>
+  <a href="/reading_lists/new">New reading list</a>
+  <a href="/books/">View books</a>
+</nav>
+<div class="container">
+  <% @reading_lists.each do |rl| %>
+  <h1>
+    <a href="/reading_lists/<%= rl.id %>"><%= rl.name %></a>
+    <%= button_to "Delete", "/reading_lists/#{rl.id}",  method: :delete, data: { confirm: "Are you sure you want to delete this reading list?" } , class: 'x-button' %>
+  </h1>
+  <% end %>
+</div>

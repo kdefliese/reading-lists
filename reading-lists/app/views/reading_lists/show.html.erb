@@ -1,14 +1,16 @@
-<h1><%= @reading_list.name %></h1>
-<% @books.each do |book| %>
+<div class="container">
+  <h1><%= @reading_list.name %></h1>
+  <% @books.each do |book| %>
+    <p>
+      <a href="/books/<%= book.id %>"><%= book.title %></a>
+      <br />
+      <%= book.author %>
+    </p>
+    <p>
+      <%= book.read_status %>
+    </p>
+  <% end %>
   <p>
-    <a href="/books/<%= book.id %>"><%= book.title %></a>
-    <br />
-    <%= book.author %>
+    <a href="/reading_lists/<%= @reading_list.id %>/edit">Edit reading list</a>
   </p>
-  <p>
-    <%= book.read_status %>
-  </p>
-<% end %>
-<p>
-  <a href="/reading_lists/<%= @reading_list.id %>/edit">Edit reading list</a>
-</p>
+</div>

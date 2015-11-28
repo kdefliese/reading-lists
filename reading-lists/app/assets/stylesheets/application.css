@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-image: url(/library_bookshelves.jpg);
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+.container {
+  background-color: #cc9a66;
+  opacity: 0.8;
+  margin: 50px;
+  padding: 20px;
+  font-family: Shadows Into Light;
+}
+
+nav {
+  background-color: #000000;
+  color: #ffffff;
+  margin: 0;
+  padding: 50px 0px 20px;
+  text-align: right;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+nav a {
+  font-family: Verdana;
+  font-weight: bold;
+  padding: 10px;
+  color: #cc9a66;
+}
+
+nav h1 {
+  display: inline;
+  text-align: left;
+  font-weight: bold;
+  color: #cc9a66;
+  font-family: Shadows Into Light;
+}

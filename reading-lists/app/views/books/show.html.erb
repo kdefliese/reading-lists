@@ -1,17 +1,19 @@
-<h1><%= @book.title %></h1>
-<h2><%= @book.author %></h2>
-<% if @book.read_status == true %>
+<div class="container">
+  <h1><%= @book.title %></h1>
+  <h2><%= @book.author %></h2>
+  <% if @book.read_status == true %>
+    <p>
+      read
+    </p>
+  <% else %>
+    <p>
+      unread
+    </p>
+  <% end %>
   <p>
-    read
+    Genre: <%= @book.genre %>
   </p>
-<% else %>
   <p>
-    unread
+    <a href="/books/<%= @book.id %>/edit">Edit book</a>
   </p>
-<% end %>
-<p>
-  Genre: <%= @book.genre %>
-</p>
-<p>
-  <a href="/books/<%= @book.id %>/edit">Edit book</a>
-</p>
+</div>
