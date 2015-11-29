@@ -85,6 +85,7 @@ h2 {
   background-color: #000000;
   color: #cc9a66;
   font-size: 24px;
+  margin-top: 20px;
 }
 
 form {
@@ -97,10 +98,23 @@ input {
   font-family: Shadows Into Light;
   font-size: 24px;
   display: block;
+  margin-bottom: 10px;
 }
 
 form input[type="radio"] {
   display: inline-block;
+}
+
+label {
+  margin: 10px;
+}
+
+select {
+  font-family: Shadows Into Light;
+  font-size: 24px;
+  display: block;
+  margin-top: 10px;
+  width: 237px;
 }
 
 .delete {
