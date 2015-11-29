@@ -20,7 +20,7 @@
   <h2 class="books_h2">
     <%= b.author %>
   </h2>
-  <span class="delete"
+  <span class="delete">
     <%= button_to "Delete", "/books/#{b.id}",  method: :delete, data: { confirm: "Are you sure you want to delete this book?" } , class: 'x-button' %>
   </span>
   <br />

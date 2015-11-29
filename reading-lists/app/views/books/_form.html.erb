@@ -1,13 +1,20 @@
 <div class="container">
   <%= form_for @book do |f| %>
       <%= f.label "Title:" %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, :required => true %>
       <%= f.label "Author:" %>
-      <%= f.text_field :author %>
-      <%= radio_button_tag(:read_status, true) %>
-      <%= label_tag(:read_status, "read") %>
-      <%= radio_button_tag(:read_status, false) %>
-      <%= label_tag(:read_status, "unread") %>
+      <%= f.text_field :author, :required => true %>
+      <% if @book.read_status == true %>
+        <%= radio_button_tag(:read_status, true, required: 'required') %>
+        <%= label_tag(:read_status, "read") %>
+        <%= radio_button_tag(:read_status, false) %>
+        <%= label_tag(:read_status, "unread") %>
+      <% else %>
+        <%= radio_button_tag(:read_status, true) %>
+        <%= label_tag(:read_status, "read") %>
+        <%= radio_button_tag(:read_status, false, required: 'required') %>
+        <%= label_tag(:read_status, "unread") %>
+      <% end %>
       <br />
       <%= f.label "Genre:" %>
       <%= f.text_field :genre %>
