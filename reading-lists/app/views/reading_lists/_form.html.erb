@@ -1,10 +1,8 @@
 <div class="container">
-  <%= form_for @reading_list, :html => {:class => "form-inline"} do |f| %>
-    <fieldset>
-      <legend><%= legend_text %></legend>
-      <%= f.label :name %>
+  <%= form_for @reading_list do |f| %>
+      <%= f.label "Name:" %>
       <%= f.text_field :name %>
+      <br />
       <%= f.submit value: "#{button_text}", class: "new_button"%>
-    </fieldset>
   <% end %>
 </div>

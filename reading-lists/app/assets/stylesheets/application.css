@@ -90,6 +90,17 @@ h2 {
 form {
   display: inline!important;
   font-size: 24px;
+  font-family: Shadows Into Light;
+}
+
+input {
+  font-family: Shadows Into Light;
+  font-size: 24px;
+  display: block;
+}
+
+form input[type="radio"] {
+  display: inline-block;
 }
 
 .delete {

@@ -1,18 +1,17 @@
 <div class="container">
-  <%= form_for @book, :html => {:class => "form-inline"} do |f| %>
-    <fieldset>
-      <legend><%= legend_text %></legend>
-      <%= f.label :title %>
+  <%= form_for @book do |f| %>
+      <%= f.label "Title:" %>
       <%= f.text_field :title %>
-      <%= f.label :author %>
+      <%= f.label "Author:" %>
       <%= f.text_field :author %>
       <%= radio_button_tag(:read_status, true) %>
       <%= label_tag(:read_status, "read") %>
       <%= radio_button_tag(:read_status, false) %>
       <%= label_tag(:read_status, "unread") %>
-      <%= f.label :genre %>
+      <br />
+      <%= f.label "Genre:" %>
       <%= f.text_field :genre %>
+      <br />
       <%= f.submit value: "#{button_text}", class: "new_button"%>
-    </fieldset>
   <% end %>
 </div>
