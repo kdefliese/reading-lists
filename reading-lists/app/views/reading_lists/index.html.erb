@@ -1,9 +1,15 @@
 <nav>
-  <h1>
+  <h1 class="nav_h1">
     READING LISTS
   </h1>
-  <a href="/reading_lists/new">NEW LIST</a>
-  <a href="/books/">VIEW ALL BOOKS</a>
+  <ul>
+    <li>
+      <a href="/reading_lists/new" class="header">NEW LIST</a>
+    </li>
+    <li>
+      <a href="/books/" class="header">VIEW ALL BOOKS</a>
+    </li>
+  </ul>
 </nav>
 <div class="container">
   <% @reading_lists.each do |rl| %>
