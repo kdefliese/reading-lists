@@ -11,7 +11,7 @@
       <br />
       <%= f.label "Genre:" %>
       <%= f.text_field :genre %>
-      <%= f.label "Add to reading list:" %>
+      <%= f.label "Choose reading list:" %>
       <br />
       <%= f.collection_select(:reading_list_id, ReadingList.all, :id, :name, prompt: true ) %>
       <%= f.submit value: "#{button_text}", class: "new_button"%>
