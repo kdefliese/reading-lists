@@ -1,9 +1,15 @@
 <nav>
-  <h1>
-    <%= @book.title %>
+  <h1 class="nav_h1">
+    <%= @book.title.upcase %>
   </h1>
-  <a href="/books/<%= @book.id %>/edit">EDIT BOOK</a>
-  <a href="/reading_lists/">VIEW READING LISTS</a>
+  <ul>
+    <li>
+      <a href="/books/<%= @book.id %>/edit" class="header">EDIT BOOK</a>
+    </li>
+    <li>
+      <a href="/reading_lists/" class="header">VIEW READING LISTS</a>
+    </li>
+  </ul>
 </nav>
 <div class="container">
   <h1><%= @book.title %></h1>

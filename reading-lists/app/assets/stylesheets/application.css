@@ -16,7 +16,7 @@
 
 body {
   background-image: url(/library_bookshelves.jpg);
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   margin: 0;
 }
 
@@ -46,6 +46,7 @@ ul {
   float: right;
   list-style-type: none;
   margin-top: 40px;
+  font-size: 20px;
 }
 
 li {

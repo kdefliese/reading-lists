@@ -1,10 +1,17 @@
 <nav>
-  <h1>
+  <h1 class="nav_h1">
     BOOKS
   </h1>
-  <a href="/books/new">NEW BOOK</a>
-  <a href="/reading_lists/">VIEW READING LISTS</a>
+  <ul>
+    <li>
+      <a href="/books/new" class="header">NEW BOOK</a>
+    </li>
+    <li>
+      <a href="/reading_lists/" class="header">VIEW READING LISTS</a>
+    </li>
+  </ul>
 </nav>
+
 <div class="container">
   <% @books.each do |b| %>
   <h1>

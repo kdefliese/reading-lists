@@ -1,9 +1,15 @@
 <nav>
-  <h1>
+  <h1 class="nav_h1">
     <%= @reading_list.name.upcase %>
   </h1>
-  <a href="/reading_lists/<%= @reading_list.id %>/edit">EDIT LIST</a>
-  <a href="/books/">VIEW ALL BOOKS</a>
+  <ul>
+    <li>
+      <a href="/reading_lists/<%= @reading_list.id %>/edit" class="header">EDIT LIST</a>
+    </li>
+    <li>
+      <a href="/books/" class="header">VIEW ALL BOOKS</a>
+    </li>
+  </ul>
 </nav>
 <div class="container">
   <% @books.each do |book| %>
