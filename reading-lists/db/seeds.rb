@@ -8,9 +8,7 @@
 
 seed_reading_lists = [
   {name: "Fantasy Books"},
-  {name: "Science Fiction Books"},
-  {name: "To Read"},
-  {name: "Completed Books"}
+  {name: "Science Fiction Books"}
 ]
 
 seed_reading_lists.each do |list|
