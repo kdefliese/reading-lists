@@ -48,3 +48,28 @@ seed_books.each do |book|
   Book.create book
   index +=1
 end
+
+# seed_reviews = [
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+#   {book_id:, body: "", reviewer:""},
+# ]
+#
+# seed_reviews.each do |review|
+#   Review.create(review)
+# end

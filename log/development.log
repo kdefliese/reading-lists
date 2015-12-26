@@ -290,3 +290,169 @@ Processing by BooksController#index as HTML
   [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books"
   Rendered books/index.html.erb within layouts/application (6.4ms)
 Completed 200 OK in 68ms (Views: 67.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateReadingLists (20151125231025)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "reading_lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151125231025"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateBooks (20151125231210)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "read_status" boolean, "genre" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151125231210"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to AddIndexToBooks (20151126061642)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "books" ADD "reading_list_id" integer
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_books_on_reading_list_id" ON "books" ("reading_list_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151126061642"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateReviews (20151226000734)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar, "reviewer" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151226000734"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_reading_list_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_reading_list_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fantasy Books"], ["created_at", "2015-12-26 00:12:18.965237"], ["updated_at", "2015-12-26 00:12:18.965237"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Science Fiction Books"], ["created_at", "2015-12-26 00:12:18.971597"], ["updated_at", "2015-12-26 00:12:18.971597"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "A Game of Thrones"], ["author", "George R.R. Martin"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:12:18.991428"], ["updated_at", "2015-12-26 00:12:18.991428"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "The Eye of the World"], ["author", "Robert Jordan"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:12:18.996217"], ["updated_at", "2015-12-26 00:12:18.996217"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Lord of the Rings"], ["author", "J.R.R. Tolkein"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:12:19.002221"], ["updated_at", "2015-12-26 00:12:19.002221"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Harry Potter and the Sorceror's Stone"], ["author", "J.K Rowling"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:12:19.008823"], ["updated_at", "2015-12-26 00:12:19.008823"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Outlander"], ["author", "Diana Gabaldon"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:12:19.014428"], ["updated_at", "2015-12-26 00:12:19.014428"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "The Crystal Cave"], ["author", "Mary Stewart"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:12:19.019903"], ["updated_at", "2015-12-26 00:12:19.019903"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Alanna: The First Adventure"], ["author", "Tamora Pierce"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:12:19.022827"], ["updated_at", "2015-12-26 00:12:19.022827"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Dune"], ["author", "Frank Herbert"], ["read_status", "f"], ["genre", "science fiction"], ["reading_list_id", 2], ["created_at", "2015-12-26 00:12:19.026198"], ["updated_at", "2015-12-26 00:12:19.026198"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Way of Kings"], ["author", "Brandon Sanderson"], ["read_status", "f"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:12:19.029904"], ["updated_at", "2015-12-26 00:12:19.029904"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Gardens of the Moon"], ["author", "Steven Erikson"], ["read_status", "f"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:12:19.033228"], ["updated_at", "2015-12-26 00:12:19.033228"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Ender's Game"], ["author", "Orson Scott Card"], ["read_status", "t"], ["genre", "science fiction"], ["reading_list_id", 2], ["created_at", "2015-12-26 00:12:19.041494"], ["updated_at", "2015-12-26 00:12:19.041494"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Snow Crash"], ["author", "Neal Stephenson"], ["read_status", "f"], ["genre", "science fiction"], ["reading_list_id", 2], ["created_at", "2015-12-26 00:12:19.047569"], ["updated_at", "2015-12-26 00:12:19.047569"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Star Wars X-Wing: Rogue Squadron"], ["author", "Michael A. Stackpole"], ["read_status", "t"], ["genre", "science-fiction"], ["reading_list_id", 2], ["created_at", "2015-12-26 00:12:19.053005"], ["updated_at", "2015-12-26 00:12:19.053005"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateReadingLists (20151125231025)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "reading_lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151125231025"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateBooks (20151125231210)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "read_status" boolean, "genre" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151125231210"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to AddIndexToBooks (20151126061642)
+  [1m[36m (1.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "books" ADD "reading_list_id" integer
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_books_on_reading_list_id" ON "books" ("reading_list_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151126061642"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateReviews (20151226000734)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar, "reviewer" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151226000734"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddBookIdToReview (20151226001607)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "reviews" ADD "book_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151226001607"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_reading_list_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_reading_list_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fantasy Books"], ["created_at", "2015-12-26 00:17:20.282713"], ["updated_at", "2015-12-26 00:17:20.282713"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Science Fiction Books"], ["created_at", "2015-12-26 00:17:20.289169"], ["updated_at", "2015-12-26 00:17:20.289169"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "A Game of Thrones"], ["author", "George R.R. Martin"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:17:20.308243"], ["updated_at", "2015-12-26 00:17:20.308243"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "The Eye of the World"], ["author", "Robert Jordan"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:17:20.312906"], ["updated_at", "2015-12-26 00:17:20.312906"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Lord of the Rings"], ["author", "J.R.R. Tolkein"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:17:20.315854"], ["updated_at", "2015-12-26 00:17:20.315854"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Harry Potter and the Sorceror's Stone"], ["author", "J.K Rowling"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:17:20.319018"], ["updated_at", "2015-12-26 00:17:20.319018"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Outlander"], ["author", "Diana Gabaldon"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:17:20.322701"], ["updated_at", "2015-12-26 00:17:20.322701"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "The Crystal Cave"], ["author", "Mary Stewart"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:17:20.328081"], ["updated_at", "2015-12-26 00:17:20.328081"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Alanna: The First Adventure"], ["author", "Tamora Pierce"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:17:20.332196"], ["updated_at", "2015-12-26 00:17:20.332196"]]
+  [1m[35m (3.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Dune"], ["author", "Frank Herbert"], ["read_status", "f"], ["genre", "science fiction"], ["reading_list_id", 2], ["created_at", "2015-12-26 00:17:20.339176"], ["updated_at", "2015-12-26 00:17:20.339176"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Way of Kings"], ["author", "Brandon Sanderson"], ["read_status", "f"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:17:20.346315"], ["updated_at", "2015-12-26 00:17:20.346315"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Gardens of the Moon"], ["author", "Steven Erikson"], ["read_status", "f"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-26 00:17:20.351026"], ["updated_at", "2015-12-26 00:17:20.351026"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Ender's Game"], ["author", "Orson Scott Card"], ["read_status", "t"], ["genre", "science fiction"], ["reading_list_id", 2], ["created_at", "2015-12-26 00:17:20.356418"], ["updated_at", "2015-12-26 00:17:20.356418"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Snow Crash"], ["author", "Neal Stephenson"], ["read_status", "f"], ["genre", "science fiction"], ["reading_list_id", 2], ["created_at", "2015-12-26 00:17:20.363157"], ["updated_at", "2015-12-26 00:17:20.363157"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Star Wars X-Wing: Rogue Squadron"], ["author", "Michael A. Stackpole"], ["read_status", "t"], ["genre", "science-fiction"], ["reading_list_id", 2], ["created_at", "2015-12-26 00:17:20.368675"], ["updated_at", "2015-12-26 00:17:20.368675"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36mBook Load (2.1ms)[0m  [1mSELECT "books".* FROM "books"[0m
