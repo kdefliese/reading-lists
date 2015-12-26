@@ -48,6 +48,11 @@ body {
   max-width: 450px;
 }
 
+.top-and-bottom-padded-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 nav {
   background-color: #000000;
   margin: 0;
