@@ -1,0 +1,9 @@
+<div class="container">
+  <%= form_for @review, url: book_reviews_path(@book.id) do |f| %>
+      <%= f.label "Tell us about the book:" %>
+      <%= f.text_area :body %>
+      <%= f.label "Your name:" %>
+      <%= f.text_field :reviewer %>
+      <%= f.submit value: "#{button_text}", class: "new_button"%>
+  <% end %>
+</div>
