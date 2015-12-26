@@ -4821,3 +4821,430 @@ Processing by BooksController#edit as HTML
   Rendered books/_form.html.erb (13.5ms)
   Rendered books/edit.html.erb within layouts/application (16.7ms)
 Completed 200 OK in 67ms (Views: 64.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/books/2/" for ::1 at 2015-12-25 22:45:38 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 2]]
+  Rendered books/show.html.erb within layouts/application (51.0ms)
+Completed 200 OK in 307ms (Views: 267.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/books/2/edit" for ::1 at 2015-12-25 22:45:42 -0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mReadingList Load (0.5ms)[0m  [1mSELECT "reading_lists".* FROM "reading_lists"[0m
+  Rendered books/_form.html.erb (25.9ms)
+  Rendered books/edit.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 82ms (Views: 79.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/__better_errors/5f96caea7f3451bd/variables" for ::1 at 2015-12-25 22:45:47 -0800
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  better_errors (2.1.1) lib/better_errors/middleware.rb:127:in `internal_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:75:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Audrey/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Audrey/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Audrey/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (118.4ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fb8d3c5c360 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fb8d3c5fd58 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fb8d3c575e0 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/books/2/reviews" for ::1 at 2015-12-25 22:45:52 -0800
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vXzpIunW2FcFivYZWtzkGff2juFibgf/+MaBFZUs4vmC61JJtX3CXx29So2UFOjRUw+Hh3TZbwEDby/1bV4hNw==", "review"=>{"body"=>"This is the greatest and best book in the world. Tribute. ", "reviewer"=>"Winona Rider"}, "commit"=>"Add New Review", "book_id"=>"2"}
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 2]]
+Unpermitted parameters: utf8, authenticity_token, commit, book_id
+Unpermitted parameters: utf8, authenticity_token, commit, book_id
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "reviews" ("body", "reviewer", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["body", "This is the greatest and best book in the world. Tribute. "], ["reviewer", "Winona Rider"], ["book_id", 2], ["created_at", "2015-12-26 06:45:52.966858"], ["updated_at", "2015-12-26 06:45:52.966858"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 8ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/books/2" for ::1 at 2015-12-25 22:45:52 -0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 2]]
+  Rendered books/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 68ms (Views: 65.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reading_lists/" for ::1 at 2015-12-25 22:46:01 -0800
+Processing by ReadingListsController#index as HTML
+  [1m[35mReadingList Load (0.2ms)[0m  SELECT "reading_lists".* FROM "reading_lists"
+  Rendered reading_lists/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 77ms (Views: 75.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reading_lists/2" for ::1 at 2015-12-25 22:46:02 -0800
+Processing by ReadingListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mReadingList Load (0.2ms)[0m  [1mSELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mBook Load (0.6ms)[0m  SELECT "books".* FROM "books" WHERE "books"."reading_list_id" = ?  [["reading_list_id", 2]]
+  Rendered reading_lists/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 74ms (Views: 68.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/books/13" for ::1 at 2015-12-25 22:46:04 -0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?  [["book_id", 13]]
+  Rendered books/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 78ms (Views: 76.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/13/reviews/new" for ::1 at 2015-12-25 22:46:08 -0800
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"13"}
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 13]]
+  Rendered reviews/_form.html.erb (5.3ms)
+  Rendered reviews/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 72ms (Views: 70.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/books/13/reviews" for ::1 at 2015-12-25 22:46:18 -0800
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Co+Joh3uYr6W55J0TqQwuioa8yryrCnElhm5eZu9XeA1GDLJQUV4to7QLuCAbDxyjuP6TOQbQTptsBeZY8+eLg==", "review"=>{"body"=>"I love x-wings!", "reviewer"=>"Jeremy P."}, "commit"=>"Add New Review", "book_id"=>"13"}
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 13]]
+Unpermitted parameters: utf8, authenticity_token, commit, book_id
+Unpermitted parameters: utf8, authenticity_token, commit, book_id
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "reviews" ("body", "reviewer", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["body", "I love x-wings!"], ["reviewer", "Jeremy P."], ["book_id", 13], ["created_at", "2015-12-26 06:46:18.947899"], ["updated_at", "2015-12-26 06:46:18.947899"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/books/13
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/books/13" for ::1 at 2015-12-25 22:46:18 -0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 13]]
+  Rendered books/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 80ms (Views: 78.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/13" for ::1 at 2015-12-26 07:46:39 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 13]]
+  Rendered books/show.html.erb within layouts/application (49.9ms)
+Completed 200 OK in 307ms (Views: 266.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-12-26 07:46:47 -0800
+Processing by ReadingListsController#index as HTML
+  [1m[35mReadingList Load (0.2ms)[0m  SELECT "reading_lists".* FROM "reading_lists"
+  Rendered reading_lists/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 56ms (Views: 52.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reading_lists/1" for ::1 at 2015-12-26 07:46:49 -0800
+Processing by ReadingListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReadingList Load (0.2ms)[0m  [1mSELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBook Load (0.4ms)[0m  SELECT "books".* FROM "books" WHERE "books"."reading_list_id" = ?  [["reading_list_id", 1]]
+  Rendered reading_lists/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 59ms (Views: 55.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/3" for ::1 at 2015-12-26 07:46:52 -0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?  [["book_id", 3]]
+  Rendered books/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 61ms (Views: 59.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/3/reviews/new" for ::1 at 2015-12-26 07:46:57 -0800
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered reviews/_form.html.erb (20.1ms)
+  Rendered reviews/new.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 109ms (Views: 107.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/books/3/reviews" for ::1 at 2015-12-26 07:47:08 -0800
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VsakrtpYUQXWw5aKMOshN3jBMCtnvZfGKGxU+EeAjNhpUR/FhvNLDc70Kh7+Iy3/3Dg5TXEK/zjTxfoYv/JPFg==", "review"=>{"body"=>"I love hobbits!", "reviewer"=>"Marigold L."}, "commit"=>"Add New Review", "book_id"=>"3"}
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 3]]
+Unpermitted parameters: utf8, authenticity_token, commit, book_id
+Unpermitted parameters: utf8, authenticity_token, commit, book_id
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "reviews" ("body", "reviewer", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["body", "I love hobbits!"], ["reviewer", "Marigold L."], ["book_id", 3], ["created_at", "2015-12-26 15:47:08.762537"], ["updated_at", "2015-12-26 15:47:08.762537"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/books/3
+Completed 302 Found in 10ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/books/3" for ::1 at 2015-12-26 07:47:08 -0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 3]]
+  Rendered books/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 68ms (Views: 66.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/3" for ::1 at 2015-12-26 07:49:18 -0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 3]]
+  Rendered books/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 100ms (Views: 98.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-26 07:49:18 -0800
+
+
+Started GET "/assets/reading_lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-26 07:49:18 -0800
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-26 07:49:18 -0800
+
+
+Started GET "/assets/application.self-2a1e611109e19b9e92526b9487d3dc76fa6998adb0b42d1e4914abf52d6fea0b.css?body=1" for ::1 at 2015-12-26 07:49:18 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-26 07:49:18 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-26 07:49:18 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-26 07:49:18 -0800
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-26 07:49:18 -0800
+
+
+Started GET "/assets/reading_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-26 07:49:18 -0800
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-26 07:49:18 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-26 07:49:18 -0800
+
+
+Started GET "/books/3" for ::1 at 2015-12-26 08:08:12 -0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 3]]
+  Rendered books/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 58ms (Views: 56.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-26 08:08:12 -0800
+
+
+Started GET "/assets/reading_lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-26 08:08:12 -0800
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-26 08:08:12 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-26 08:08:12 -0800
+
+
+Started GET "/assets/application.self-2a1e611109e19b9e92526b9487d3dc76fa6998adb0b42d1e4914abf52d6fea0b.css?body=1" for ::1 at 2015-12-26 08:08:12 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-26 08:08:12 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-26 08:08:12 -0800
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-26 08:08:12 -0800
+
+
+Started GET "/assets/reading_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-26 08:08:12 -0800
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-26 08:08:12 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-26 08:08:12 -0800
+
+
+Started GET "/books/3/reviews/new" for ::1 at 2015-12-26 08:08:17 -0800
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"3"}
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered reviews/_form.html.erb (1.6ms)
+  Rendered reviews/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 55ms (Views: 53.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books/3" for ::1 at 2015-12-26 08:14:44 -0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?  [["book_id", 3]]
+  Rendered books/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 76ms (Views: 61.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/books/3/reviews/new" for ::1 at 2015-12-26 08:14:46 -0800
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered reviews/_form.html.erb (2.5ms)
+  Rendered reviews/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 53ms (Views: 50.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/books/3/reviews" for ::1 at 2015-12-26 08:15:10 -0800
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+g5bGCk5MTHEJGSLI8cnG2vA+sA3sLbrtv2VDTHnrQXFmeBzdZIrOdwT2B/tDyvTzznzpiEH3hVNVDvtyZVuyw==", "review"=>{"body"=>"Don't believe the hype. It's only okay.", "reviewer"=>"Jaybird Williams"}, "commit"=>"Add New Review", "book_id"=>"3"}
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 3]]
+Unpermitted parameters: utf8, authenticity_token, commit, book_id
+Unpermitted parameters: utf8, authenticity_token, commit, book_id
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "reviews" ("body", "reviewer", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["body", "Don't believe the hype. It's only okay."], ["reviewer", "Jaybird Williams"], ["book_id", 3], ["created_at", "2015-12-26 16:15:10.376668"], ["updated_at", "2015-12-26 16:15:10.376668"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/books/3
+Completed 302 Found in 9ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/books/3" for ::1 at 2015-12-26 08:15:10 -0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 3]]
+  Rendered books/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 61ms (Views: 58.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/3" for ::1 at 2015-12-26 08:15:27 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 3]]
+  Rendered books/show.html.erb within layouts/application (49.3ms)
+Completed 200 OK in 307ms (Views: 265.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/reading_lists/" for ::1 at 2015-12-26 08:15:32 -0800
+Processing by ReadingListsController#index as HTML
+  [1m[35mReadingList Load (0.2ms)[0m  SELECT "reading_lists".* FROM "reading_lists"
+  Rendered reading_lists/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 58ms (Views: 54.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reading_lists/1" for ::1 at 2015-12-26 08:15:33 -0800
+Processing by ReadingListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReadingList Load (0.2ms)[0m  [1mSELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" WHERE "books"."reading_list_id" = ?  [["reading_list_id", 1]]
+  Rendered reading_lists/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 65ms (Views: 60.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/2" for ::1 at 2015-12-26 08:15:36 -0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?  [["book_id", 2]]
+  Rendered books/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 56ms (Views: 54.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reading_lists/" for ::1 at 2015-12-26 08:15:43 -0800
+Processing by ReadingListsController#index as HTML
+  [1m[36mReadingList Load (0.2ms)[0m  [1mSELECT "reading_lists".* FROM "reading_lists"[0m
+  Rendered reading_lists/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 73ms (Views: 71.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reading_lists/2" for ::1 at 2015-12-26 08:15:44 -0800
+Processing by ReadingListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mReadingList Load (0.1ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."reading_list_id" = ?[0m  [["reading_list_id", 2]]
+  Rendered reading_lists/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 68ms (Views: 66.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/12" for ::1 at 2015-12-26 08:15:46 -0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 12]]
+  Rendered books/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 68ms (Views: 65.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/12/reviews/new" for ::1 at 2015-12-26 08:15:50 -0800
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"12"}
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered reviews/_form.html.erb (23.0ms)
+  Rendered reviews/new.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 96ms (Views: 94.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/books/12/reviews" for ::1 at 2015-12-26 08:16:12 -0800
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JoN7vjJ0zLsqgbU+J0Ztc9l+CPaC38TTNTGvmk2cPggZFMDVbt/WszK2CarpjmG7fYcBkJRorC3OmAF6te79xg==", "review"=>{"body"=>"If there's a bad place to crash, it's in the snow.", "reviewer"=>"Kaydee Schnee"}, "commit"=>"Add New Review", "book_id"=>"12"}
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 12]]
+Unpermitted parameters: utf8, authenticity_token, commit, book_id
+Unpermitted parameters: utf8, authenticity_token, commit, book_id
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "reviews" ("body", "reviewer", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "If there's a bad place to crash, it's in the snow."], ["reviewer", "Kaydee Schnee"], ["book_id", 12], ["created_at", "2015-12-26 16:16:12.464968"], ["updated_at", "2015-12-26 16:16:12.464968"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/books/12
+Completed 302 Found in 11ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/books/12" for ::1 at 2015-12-26 08:16:12 -0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?  [["book_id", 12]]
+  Rendered books/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 84ms (Views: 79.4ms | ActiveRecord: 0.6ms)

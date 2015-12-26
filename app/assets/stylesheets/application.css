@@ -14,22 +14,22 @@
  *= require_self
  */
 
-.bigger-text-area {
-  min-width: 100px;
-  min-height: 50px;
-}
+
+ .bigger-text-area {
+   min-width: 100px;
+   min-height: 50px;
+ }
+
+ .bit-of-side-pad {
+   padding-left: 10px;
+   padding-right: 10px;
+ }
 
 body {
   background-image: url(/library_bookshelves.jpg);
   background-repeat: repeat-y;
   margin: 0;
 }
-
-.bit-of-side-pad {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
 
 .container {
   background-color: #cc9a66;
@@ -42,13 +42,9 @@ body {
 .float-left {
   float: left;
 }
+
 .float-right {
   float: right;
-}
-
-.side-padded-container {
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 .lesser-container {
@@ -57,6 +53,11 @@ body {
   margin-top: 8px;
   margin-bottom 8px;
   max-width: 450px;
+}
+
+.side-padded-container {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .top-and-bottom-padded-container {

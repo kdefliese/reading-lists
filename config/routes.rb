@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'reading_lists#index'
   resources :reading_lists
   resources :books do
-    resources :reviews
+    resources :reviews, only: [:new, :create]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
