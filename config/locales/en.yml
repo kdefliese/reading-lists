@@ -25,4 +25,4 @@
 en:
   time:
     formats:
-      standard: '%d.%m.%Y'
+      standard: '%m.%d.%Y'
