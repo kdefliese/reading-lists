@@ -27,11 +27,11 @@
     </p>
   <% end %>
   <div class="container">
-    <%= @book.reviews.each do |review| %>
+    <% @book.reviews.each do |review| %>
       <p><%= review.body %></p>
       <p> by <%= review.reviewer %> </p>
-      <p><%= review.created_at %></p>
-    <% end rt%>
+      <p><%= localize(review.created_at, :format => :standard) %></p>
+    <% end %>
 
   </div>
 </div>
