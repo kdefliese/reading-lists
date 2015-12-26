@@ -25,6 +25,12 @@ body {
   margin: 0;
 }
 
+.bit-of-side-pad {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
 .container {
   background-color: #cc9a66;
   opacity: 0.8;
