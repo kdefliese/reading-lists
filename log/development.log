@@ -739,3 +739,51 @@ Migrating to AddBookIdToReview (20151226001607)
   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["book_id", 13], ["body", "This book transformed the way I look at fiction. Please don't listen to the critics- it deserves a deep read."], ["reviewer", "M.J. Madden"], ["created_at", "2015-12-26 00:45:15.249607"], ["updated_at", "2015-12-26 00:45:15.249607"]]
   [1m[35m (0.9ms)[0m  commit transaction
   [1m[36mReview Load (1.3ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+
+
+Started GET "/books/12" for ::1 at 2015-12-25 16:56:26 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mBook Load (0.3ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered books/show.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined method `reviews' for #<Book:0x007fa7a644a908>):
+    27:     </p>
+    28:   <% end %>
+    29:   <div class="container">
+    30:     <%= @book.reviews.each do %>
+    31:       <p>review.body</p>
+    32:       <p>by review.reviewer </p>
+    33:       <p>review.created_at</p>
+  app/views/books/show.html.erb:30:in `_app_views_books_show_html_erb___2165021122286335957_70178993370180'
+
+
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (83.7ms)
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (60.5ms)
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Audrey/.rvm/gems/ruby-2.2.3@reading-lists/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (140.8ms)
+  [1m[36mBook Load (2.0ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReview Load (2.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?  [["book_id", 1]]
+
+
+Started GET "/books/12" for ::1 at 2015-12-25 16:58:13 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mReview Load (0.5ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 12]]
+  Rendered books/show.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 286ms (Views: 250.8ms | ActiveRecord: 1.2ms)
