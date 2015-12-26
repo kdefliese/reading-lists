@@ -28,12 +28,12 @@
   <% end %>
   <div class="side-padded-container">
     <h2>Reviews</h2>
-        <% @book.reviews.each do |review| %>
-          <div class="lesser-container">
-            <p><%= review.body %></p>
-            <div class="float-left"> by <%= review.reviewer %></div>
-            <div class="float-right"><%= localize(review.created_at,  :format => :standard) %></div>
-          </div>
-        <% end %>
+      <% @book.reviews.each do |review| %>
+        <div class="lesser-container">
+          <p><%= review.body %></p>
+          <div class="float-left"> by <%= review.reviewer %></div>
+          <div class="float-right"><%= localize(review.created_at,  :format => :standard) %></div>
+        </div>
+      <% end %>
   </div>
 </div>
