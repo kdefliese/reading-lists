@@ -164,3 +164,10 @@ hr {
 .read_status {
   font-style: italic;
 }
+
+.text-area {
+  font-size: 24px;
+  font-family: Shadows Into Light;
+  display: block;
+  margin-bottom: 10px;
+}
