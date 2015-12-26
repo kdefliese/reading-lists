@@ -39,7 +39,7 @@
       <% else %>
         <div class="lesser-container">
           <p>There are currently no reviews for this book.</p>
-          <p> Add your own. <p>
+          <%= link_to "Add a Review", new_book_review_path(@book) %>
         </div>
       <% end %>
   </div>
