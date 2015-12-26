@@ -27,10 +27,11 @@
     </p>
   <% end %>
   <div class="container">
-    <%= @book.reviews.each do %>
-      <p>review.body</p>
-      <p>by review.reviewer </p>
-      <p>review.created_at</p>
-    <% end %>
+    <%= @book.reviews.each do |review| %>
+      <p><%= review.body %></p>
+      <p> by <%= review.reviewer %> </p>
+      <p><%= review.created_at %></p>
+    <% end rt%>
+
   </div>
 </div>
