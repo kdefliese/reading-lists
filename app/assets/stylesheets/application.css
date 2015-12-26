@@ -28,6 +28,26 @@ body {
   font-family: Shadows Into Light;
 }
 
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+
+.side-padded-container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.lesser-container {
+  padding-top: 5px;
+  padding-bottom: 25px;
+  margin-top: 8px;
+  margin-bottom 8px;
+  max-width: 450px;
+}
+
 nav {
   background-color: #000000;
   margin: 0;
