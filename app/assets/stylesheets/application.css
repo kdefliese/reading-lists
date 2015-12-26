@@ -14,6 +14,11 @@
  *= require_self
  */
 
+.bigger-text-area {
+  min-width: 100px;
+  min-height: 50px;
+}
+
 body {
   background-image: url(/library_bookshelves.jpg);
   background-repeat: repeat-y;
