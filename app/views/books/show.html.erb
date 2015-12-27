@@ -17,6 +17,9 @@
   <p>
     Genre: <%= @book.genre %>
   </p>
+  <p>
+    Rating: <%= @book.rating ? "#{@book.rating} out of 5" : "none"  %>
+  </p>
   <% if @book.read_status == true %>
     <p class="read_status">
       read
