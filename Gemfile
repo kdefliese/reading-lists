@@ -37,6 +37,8 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do
@@ -44,6 +46,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'hirb'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end

@@ -14,6 +14,17 @@
  *= require_self
  */
 
+
+ .bigger-text-area {
+   min-width: 100px;
+   min-height: 50px;
+ }
+
+ .bit-of-side-pad {
+   padding-left: 10px;
+   padding-right: 10px;
+ }
+
 body {
   background-image: url(/library_bookshelves.jpg);
   background-repeat: repeat-y;
@@ -26,6 +37,32 @@ body {
   margin: 50px;
   padding: 20px;
   font-family: Shadows Into Light;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.lesser-container {
+  padding-top: 5px;
+  padding-bottom: 25px;
+  margin-top: 8px;
+  margin-bottom 8px;
+  max-width: 450px;
+}
+
+.side-padded-container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.top-and-bottom-padded-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 nav {
@@ -133,4 +170,11 @@ hr {
 
 .read_status {
   font-style: italic;
+}
+
+.text-area {
+  font-size: 24px;
+  font-family: Shadows Into Light;
+  display: block;
+  margin-bottom: 10px;
 }
