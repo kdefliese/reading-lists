@@ -30,6 +30,7 @@ class BooksController < ApplicationController
         author: book_params[:book][:author],
         read_status: params[:read_status],
         genre: book_params[:book][:genre],
+        rating: book_params[:book][:rating],
         reading_list_id: book_params[:book][:reading_list_id]
         )
     redirect_to "/books"
@@ -44,7 +45,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.permit(book:[:title, :author, :genre, :read_status, :reading_list_id])
+    params.permit(book:[:title, :author, :genre, :read_status, :rating, :reading_list_id])
   end
 
 end
