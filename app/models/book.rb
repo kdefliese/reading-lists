@@ -3,11 +3,16 @@ class Book < ActiveRecord::Base
   has_many :reviews
 
   def get_image
-    url = "https://www.googleapis.com/books/v1/volumes?q=#{self.title}&key=#{ENV['GOOGLE_KEY']}&maxResults=1"
-    response = HTTParty.get(url, verify: false, format: :json).parsed_response
+    url = "https://www.googleapis.com/books/v1/volumes?q=#{self.title}&key=#{ENV['GOOGLE_KEY']}"
+    response = HTTParty.get(url, verify: false).parsed_response
 
     unless response["totalItems"] == 0
-      return response["items"].first["volumeInfo"]["imageLinks"]["smallThumbnail"] #.gsub(/&zoom.*/, '') adding this this gets a full-size image, but they're not available for MANY books.
+      n = 0
+      until response["items"][n]["volumeInfo"]["imageLinks"]
+        n += 1
+      end
+
+      return response["items"][n]["volumeInfo"]["imageLinks"]["smallThumbnail"] #.gsub(/&zoom.*/, '') adding this this gets a full-size image, but they're not available for MANY books.
     else
       return "http://favim.com/orig/201105/12/book-cat-gato-heart-livro-Favim.com-42338.jpg"
     end
