@@ -25,7 +25,7 @@ RSpec.describe ReadingListsController, type: :controller do
 
     it "redirects to the root route" do
       post :create
-      expect(subject).to redirect_to "/"
+      expect(subject).to redirect_to root_path
     end
   end
 
@@ -44,9 +44,36 @@ RSpec.describe ReadingListsController, type: :controller do
     let(:reading_list) do
       ReadingList.create(name: "biography")
     end
+
     it "shows the appropriate reading list" do
       get :show, id: reading_list.id
       expect(subject).to render_template :show
     end
+  end
+
+  describe "PATCH 'update'" do
+    let(:reading_list) do
+      ReadingList.create(name: "travel")
+    end
+
+    let(:params) do
+      {
+        reading_list:{
+          name: "oceanography"
+        },
+        id: reading_list.id
+      }
+    end
+
+    it "updates the reading list" do
+      before_update = reading_list.attributes
+      patch :update, params.merge(id: reading_list.id)
+      reading_list.reload
+      expect(reading_list.attributes).to_not eq before_update
+    end
+  end
+
+  describe "DELETE 'destroy'" do
+
   end
 end
