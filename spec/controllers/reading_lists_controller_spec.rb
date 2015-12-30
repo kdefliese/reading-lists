@@ -22,5 +22,31 @@ RSpec.describe ReadingListsController, type: :controller do
       post :create
       expect(ReadingList.last).to_not eq last_list
     end
+
+    it "redirects to the root route" do
+      post :create
+      expect(subject).to redirect_to "/"
+    end
+  end
+
+  describe "GET 'edit'" do
+    let(:reading_list) do
+      ReadingList.create(name: "poetry")
+    end
+
+    it "renders the edit template" do
+      get :edit, id: reading_list.id
+      expect(subject).to render_template :edit
+    end
+  end
+
+  describe "GET 'show'" do
+    let(:reading_list) do
+      ReadingList.create(name: "biography")
+    end
+    it "shows the appropriate reading list" do
+      get :show, id: reading_list.id
+      expect(subject).to render_template :show
+    end
   end
 end
