@@ -14,6 +14,9 @@
  *= require_self
  */
 
+ .book-img {
+   width: 150px;
+ }
 
  .bigger-text-area {
    min-width: 100px;

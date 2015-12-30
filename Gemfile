@@ -32,6 +32,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'httparty', '~> 0.13.7'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -39,6 +41,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'dotenv-rails', '~> 2.0', '>= 2.0.2'
 end
 
 group :development do
