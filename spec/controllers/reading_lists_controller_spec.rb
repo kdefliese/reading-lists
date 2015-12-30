@@ -74,6 +74,19 @@ RSpec.describe ReadingListsController, type: :controller do
   end
 
   describe "DELETE 'destroy'" do
+    let(:reading_list) do
+      ReadingList.create(name: "space")
+    end
+    let(:params) do
+      {
+      id: reading_list.id
+    }
+    end
 
+    it "deletes a reading list" do
+      expect(ReadingList.all).to include(reading_list)
+      delete :destroy, params
+      expect(ReadingList.all).to_not include(reading_list)
+    end
   end
 end

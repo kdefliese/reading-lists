@@ -461,3 +461,298 @@ Redirected to http://test.host/
 Completed 302 Found in 12ms (ActiveRecord: 1.9ms)
   [1m[35mReadingList Load (0.2ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
   [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ReadingListsController#index as HTML
+  Rendered reading_lists/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ReadingListsController#new as HTML
+  Rendered reading_lists/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mReadingList Load (0.1ms)[0m  [1mSELECT  "reading_lists".* FROM "reading_lists"  ORDER BY "reading_lists"."id" DESC LIMIT 1[0m
+Processing by ReadingListsController#create as HTML
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "reading_lists" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-12-30 23:17:17.590081"], ["updated_at", "2015-12-30 23:17:17.590081"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+  [1m[36mReadingList Load (0.1ms)[0m  [1mSELECT  "reading_lists".* FROM "reading_lists"  ORDER BY "reading_lists"."id" DESC LIMIT 1[0m
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by ReadingListsController#create as HTML
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reading_lists" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-12-30 23:17:17.599462"], ["updated_at", "2015-12-30 23:17:17.599462"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "poetry"], ["created_at", "2015-12-30 23:17:17.605369"], ["updated_at", "2015-12-30 23:17:17.605369"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReadingListsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mReadingList Load (0.1ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reading_lists/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 8ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "biography"], ["created_at", "2015-12-30 23:17:17.627742"], ["updated_at", "2015-12-30 23:17:17.627742"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReadingListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mReadingList Load (0.1ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reading_lists/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 15ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "travel"], ["created_at", "2015-12-30 23:17:17.649395"], ["updated_at", "2015-12-30 23:17:17.649395"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReadingListsController#update as HTML
+  Parameters: {"reading_list"=>{"name"=>"oceanography"}, "id"=>"1"}
+  [1m[35mReadingList Load (0.1ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: id
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.3ms)[0m  UPDATE "reading_lists" SET "name" = ?, "updated_at" = ? WHERE "reading_lists"."id" = ?  [["name", "oceanography"], ["updated_at", "2015-12-30 23:17:17.653070"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+  [1m[35mReadingList Load (0.1ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mReadingList Load (0.2ms)[0m  [1mSELECT "reading_lists".* FROM "reading_lists"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ReadingListsController#index as HTML
+  Rendered reading_lists/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ReadingListsController#new as HTML
+  Rendered reading_lists/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mReadingList Load (0.1ms)[0m  [1mSELECT  "reading_lists".* FROM "reading_lists"  ORDER BY "reading_lists"."id" DESC LIMIT 1[0m
+Processing by ReadingListsController#create as HTML
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "reading_lists" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-12-30 23:17:47.252511"], ["updated_at", "2015-12-30 23:17:47.252511"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+  [1m[36mReadingList Load (0.1ms)[0m  [1mSELECT  "reading_lists".* FROM "reading_lists"  ORDER BY "reading_lists"."id" DESC LIMIT 1[0m
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by ReadingListsController#create as HTML
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reading_lists" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-12-30 23:17:47.275450"], ["updated_at", "2015-12-30 23:17:47.275450"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "poetry"], ["created_at", "2015-12-30 23:17:47.285028"], ["updated_at", "2015-12-30 23:17:47.285028"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReadingListsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mReadingList Load (0.1ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reading_lists/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "biography"], ["created_at", "2015-12-30 23:17:47.301371"], ["updated_at", "2015-12-30 23:17:47.301371"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReadingListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mReadingList Load (0.1ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reading_lists/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 13ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "travel"], ["created_at", "2015-12-30 23:17:47.322270"], ["updated_at", "2015-12-30 23:17:47.322270"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReadingListsController#update as HTML
+  Parameters: {"reading_list"=>{"name"=>"oceanography"}, "id"=>"1"}
+  [1m[35mReadingList Load (0.1ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: id
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "reading_lists" SET "name" = ?, "updated_at" = ? WHERE "reading_lists"."id" = ?  [["name", "oceanography"], ["updated_at", "2015-12-30 23:17:47.332805"], ["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 11ms (ActiveRecord: 1.3ms)
+  [1m[35mReadingList Load (0.3ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mReadingList Load (0.1ms)[0m  [1mSELECT "reading_lists".* FROM "reading_lists"[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "history"], ["created_at", "2015-12-30 23:17:47.349208"], ["updated_at", "2015-12-30 23:17:47.349208"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ReadingListsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReadingList Load (0.1ms)[0m  [1mSELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "reading_lists" WHERE "reading_lists"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+  [1m[36mReadingList Load (0.1ms)[0m  [1mSELECT "reading_lists".* FROM "reading_lists"[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ReadingListsController#index as HTML
+  Rendered reading_lists/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ReadingListsController#new as HTML
+  Rendered reading_lists/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mReadingList Load (0.1ms)[0m  [1mSELECT  "reading_lists".* FROM "reading_lists"  ORDER BY "reading_lists"."id" DESC LIMIT 1[0m
+Processing by ReadingListsController#create as HTML
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "reading_lists" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-12-30 23:20:44.362559"], ["updated_at", "2015-12-30 23:20:44.362559"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+  [1m[36mReadingList Load (0.1ms)[0m  [1mSELECT  "reading_lists".* FROM "reading_lists"  ORDER BY "reading_lists"."id" DESC LIMIT 1[0m
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by ReadingListsController#create as HTML
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reading_lists" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-12-30 23:20:44.381536"], ["updated_at", "2015-12-30 23:20:44.381536"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "poetry"], ["created_at", "2015-12-30 23:20:44.392247"], ["updated_at", "2015-12-30 23:20:44.392247"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReadingListsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mReadingList Load (0.2ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reading_lists/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "biography"], ["created_at", "2015-12-30 23:20:44.407654"], ["updated_at", "2015-12-30 23:20:44.407654"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReadingListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mReadingList Load (0.0ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reading_lists/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 12ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "travel"], ["created_at", "2015-12-30 23:20:44.426246"], ["updated_at", "2015-12-30 23:20:44.426246"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReadingListsController#update as HTML
+  Parameters: {"reading_list"=>{"name"=>"oceanography"}, "id"=>"1"}
+  [1m[35mReadingList Load (0.1ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "reading_lists" SET "name" = ?, "updated_at" = ? WHERE "reading_lists"."id" = ?  [["name", "oceanography"], ["updated_at", "2015-12-30 23:20:44.430966"], ["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+  [1m[35mReadingList Load (0.2ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mReadingList Load (0.1ms)[0m  [1mSELECT "reading_lists".* FROM "reading_lists"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ReadingListsController#index as HTML
+  Rendered reading_lists/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ReadingListsController#new as HTML
+  Rendered reading_lists/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mReadingList Load (0.1ms)[0m  [1mSELECT  "reading_lists".* FROM "reading_lists"  ORDER BY "reading_lists"."id" DESC LIMIT 1[0m
+Processing by ReadingListsController#create as HTML
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "reading_lists" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-12-30 23:26:20.264268"], ["updated_at", "2015-12-30 23:26:20.264268"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+  [1m[36mReadingList Load (0.1ms)[0m  [1mSELECT  "reading_lists".* FROM "reading_lists"  ORDER BY "reading_lists"."id" DESC LIMIT 1[0m
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by ReadingListsController#create as HTML
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "reading_lists" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-12-30 23:26:20.273930"], ["updated_at", "2015-12-30 23:26:20.273930"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "poetry"], ["created_at", "2015-12-30 23:26:20.282544"], ["updated_at", "2015-12-30 23:26:20.282544"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReadingListsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mReadingList Load (0.6ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reading_lists/edit.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 3.9ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "biography"], ["created_at", "2015-12-30 23:26:20.308478"], ["updated_at", "2015-12-30 23:26:20.308478"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReadingListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mReadingList Load (0.1ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reading_lists/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 15ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "travel"], ["created_at", "2015-12-30 23:26:20.328520"], ["updated_at", "2015-12-30 23:26:20.328520"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReadingListsController#update as HTML
+  Parameters: {"reading_list"=>{"name"=>"oceanography"}, "id"=>"1"}
+  [1m[35mReadingList Load (0.6ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: id
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "reading_lists" SET "name" = ?, "updated_at" = ? WHERE "reading_lists"."id" = ?  [["name", "oceanography"], ["updated_at", "2015-12-30 23:26:20.335619"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+  [1m[35mReadingList Load (0.1ms)[0m  SELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "space"], ["created_at", "2015-12-30 23:26:20.344576"], ["updated_at", "2015-12-30 23:26:20.344576"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadingList Load (0.1ms)[0m  SELECT "reading_lists".* FROM "reading_lists"
+Processing by ReadingListsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReadingList Load (0.1ms)[0m  [1mSELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "reading_lists" WHERE "reading_lists"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[36mReadingList Load (0.1ms)[0m  [1mSELECT "reading_lists".* FROM "reading_lists"[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
