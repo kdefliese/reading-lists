@@ -45,8 +45,9 @@ seed_books = [
 
 
 seed_books.each do |book|
-  Book.create book
+  new_book = Book.create book
   index +=1
+  new_book.update(image_url: new_book.get_image)
 end
 
 seed_reviews = [
