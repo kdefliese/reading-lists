@@ -1,78 +1,23 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/katherinedefliese/Documents/Ada_homework/project-forks/reading-lists/app/helpers/application_helper.rb": [
+      "/Users/amyhunter/Desktop/solo-projects/reading-lists/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/katherinedefliese/Documents/Ada_homework/project-forks/reading-lists/app/helpers/books_helper.rb": [
+      "/Users/amyhunter/Desktop/solo-projects/reading-lists/app/helpers/books_helper.rb": [
         1,
         null
       ],
-      "/Users/katherinedefliese/Documents/Ada_homework/project-forks/reading-lists/app/helpers/reading_lists_helper.rb": [
+      "/Users/amyhunter/Desktop/solo-projects/reading-lists/app/helpers/reading_lists_helper.rb": [
         1,
         null
       ],
-      "/Users/katherinedefliese/Documents/Ada_homework/project-forks/reading-lists/app/controllers/books_controller.rb": [
-        1,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/katherinedefliese/Documents/Ada_homework/project-forks/reading-lists/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
+      "/Users/amyhunter/Desktop/solo-projects/reading-lists/app/helpers/reviews_helper.rb": [
         1,
         null
       ],
-      "/Users/katherinedefliese/Documents/Ada_homework/project-forks/reading-lists/app/controllers/reading_lists_controller.rb": [
+      "/Users/amyhunter/Desktop/solo-projects/reading-lists/app/controllers/books_controller.rb": [
         1,
         1,
         0,
@@ -95,13 +40,17 @@
         1,
         0,
         0,
-        0,
         null,
         null,
         1,
         0,
         0,
         0,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         0,
@@ -121,17 +70,101 @@
         null,
         null
       ],
-      "/Users/katherinedefliese/Documents/Ada_homework/project-forks/reading-lists/app/models/book.rb": [
+      "/Users/amyhunter/Desktop/solo-projects/reading-lists/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/amyhunter/Desktop/solo-projects/reading-lists/app/controllers/reading_lists_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/amyhunter/Desktop/solo-projects/reading-lists/app/models/book.rb": [
+        1,
         1,
         1,
         null
       ],
-      "/Users/katherinedefliese/Documents/Ada_homework/project-forks/reading-lists/app/models/reading_list.rb": [
+      "/Users/amyhunter/Desktop/solo-projects/reading-lists/app/models/reading_list.rb": [
         1,
         1,
         null
+      ],
+      "/Users/amyhunter/Desktop/solo-projects/reading-lists/app/controllers/reviews_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/amyhunter/Desktop/solo-projects/reading-lists/app/models/review.rb": [
+        0,
+        0,
+        0
       ]
     },
-    "timestamp": 1451339351
+    "timestamp": 1451513675
   }
 }
