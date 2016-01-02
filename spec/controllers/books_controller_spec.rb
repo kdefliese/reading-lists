@@ -16,7 +16,7 @@ RSpec.describe BooksController, type: :controller do
   end
 
   describe "POST 'create'" do
-    it "creates a new Book" do
+    it "creates a new book" do
       last_book = Book.last
       post :create
       expect(Book.last).to_not eq last_book

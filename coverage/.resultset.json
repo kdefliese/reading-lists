@@ -126,6 +126,28 @@
         null,
         null
       ],
+      "/Users/amyhunter/Desktop/solo-projects/reading-lists/app/controllers/reviews_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
       "/Users/amyhunter/Desktop/solo-projects/reading-lists/app/models/book.rb": [
         1,
         1,
@@ -137,34 +159,12 @@
         1,
         null
       ],
-      "/Users/amyhunter/Desktop/solo-projects/reading-lists/app/controllers/reviews_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
       "/Users/amyhunter/Desktop/solo-projects/reading-lists/app/models/review.rb": [
-        0,
-        0,
-        0
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1451704417
+    "timestamp": 1451715053
   }
 }
