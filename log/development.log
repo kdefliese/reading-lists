@@ -1,0 +1,227 @@
+
+
+Started GET "/" for ::1 at 2015-12-30 13:47:41 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError - 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+:
+  activerecord (4.2.4) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/amyhunter/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/amyhunter/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/amyhunter/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/13a3ee176b316dcf/variables" for ::1 at 2015-12-30 13:47:41 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateReviews (20151226000734)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar, "reviewer" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151226000734"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddBookIdToReview (20151226001607)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "reviews" ADD "book_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151226001607"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddRatingToBook (20151227223908)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "books" ADD "rating" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151227223908"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_reading_list_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_reading_list_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fantasy Books"], ["created_at", "2015-12-30 21:48:19.678723"], ["updated_at", "2015-12-30 21:48:19.678723"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reading_lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Science Fiction Books"], ["created_at", "2015-12-30 21:48:19.683058"], ["updated_at", "2015-12-30 21:48:19.683058"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "A Game of Thrones"], ["author", "George R.R. Martin"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-30 21:48:19.695359"], ["updated_at", "2015-12-30 21:48:19.695359"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "The Eye of the World"], ["author", "Robert Jordan"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-30 21:48:19.697965"], ["updated_at", "2015-12-30 21:48:19.697965"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Lord of the Rings"], ["author", "J.R.R. Tolkein"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-30 21:48:19.700181"], ["updated_at", "2015-12-30 21:48:19.700181"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Harry Potter and the Sorceror's Stone"], ["author", "J.K Rowling"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-30 21:48:19.702613"], ["updated_at", "2015-12-30 21:48:19.702613"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Outlander"], ["author", "Diana Gabaldon"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-30 21:48:19.704703"], ["updated_at", "2015-12-30 21:48:19.704703"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "The Crystal Cave"], ["author", "Mary Stewart"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-30 21:48:19.706875"], ["updated_at", "2015-12-30 21:48:19.706875"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Alanna: The First Adventure"], ["author", "Tamora Pierce"], ["read_status", "t"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-30 21:48:19.709282"], ["updated_at", "2015-12-30 21:48:19.709282"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Dune"], ["author", "Frank Herbert"], ["read_status", "f"], ["genre", "science fiction"], ["reading_list_id", 2], ["created_at", "2015-12-30 21:48:19.711402"], ["updated_at", "2015-12-30 21:48:19.711402"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Way of Kings"], ["author", "Brandon Sanderson"], ["read_status", "f"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-30 21:48:19.713455"], ["updated_at", "2015-12-30 21:48:19.713455"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Gardens of the Moon"], ["author", "Steven Erikson"], ["read_status", "f"], ["genre", "fantasy"], ["reading_list_id", 1], ["created_at", "2015-12-30 21:48:19.715444"], ["updated_at", "2015-12-30 21:48:19.715444"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Ender's Game"], ["author", "Orson Scott Card"], ["read_status", "t"], ["genre", "science fiction"], ["reading_list_id", 2], ["created_at", "2015-12-30 21:48:19.717463"], ["updated_at", "2015-12-30 21:48:19.717463"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Snow Crash"], ["author", "Neal Stephenson"], ["read_status", "f"], ["genre", "science fiction"], ["reading_list_id", 2], ["created_at", "2015-12-30 21:48:19.720007"], ["updated_at", "2015-12-30 21:48:19.720007"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "books" ("title", "author", "read_status", "genre", "reading_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Star Wars X-Wing: Rogue Squadron"], ["author", "Michael A. Stackpole"], ["read_status", "t"], ["genre", "science-fiction"], ["reading_list_id", 2], ["created_at", "2015-12-30 21:48:19.722099"], ["updated_at", "2015-12-30 21:48:19.722099"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_id", 1], ["body", "A fun romp through the pseudo-middle ages. Not to be missed."], ["reviewer", "Jamie C."], ["created_at", "2015-12-30 21:48:19.729027"], ["updated_at", "2015-12-30 21:48:19.729027"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["book_id", 1], ["body", "Winter is coming! Brrrr. The books are way better than the TV series."], ["reviewer", "Alexandra P."], ["created_at", "2015-12-30 21:48:19.731339"], ["updated_at", "2015-12-30 21:48:19.731339"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_id", 2], ["body", "Whose eye? Why, the eye of the world, of course! Sit back and enjoy the ride. It will make you laugh. It will make you weep. It will make you think about your humanity and the humanity of those around you."], ["reviewer", "John H.P."], ["created_at", "2015-12-30 21:48:19.733157"], ["updated_at", "2015-12-30 21:48:19.733157"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["book_id", 3], ["body", "Not all that into hobbits, elves, and giant trees that walk? Get ready to have your world turned upside-down."], ["reviewer", "Marigold Weiss"], ["created_at", "2015-12-30 21:48:19.734930"], ["updated_at", "2015-12-30 21:48:19.734930"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_id", 4], ["body", "My daughter won't put this book down. She reads it during school. She reads it all night. She won't talk to anyone. Apparently it's a great book, but it's tearing our family apart."], ["reviewer", "Samantha P."], ["created_at", "2015-12-30 21:48:19.737107"], ["updated_at", "2015-12-30 21:48:19.737107"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["book_id", 4], ["body", "If you love a good ol' wizarding world, you'll love this book."], ["reviewer", "Mia M."], ["created_at", "2015-12-30 21:48:19.738851"], ["updated_at", "2015-12-30 21:48:19.738851"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_id", 5], ["body", "I cried at the end. I cried at the beginning. I cried pretty much the entire time I read it."], ["reviewer", "Hamworth G. Wellington"], ["created_at", "2015-12-30 21:48:19.740790"], ["updated_at", "2015-12-30 21:48:19.740790"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["book_id", 6], ["body", "What kind of cave is it? A crystal one, of course. Prepare to dream of glittery crystals all night and day after reading this delightful novel."], ["reviewer", "Wixby Wick"], ["created_at", "2015-12-30 21:48:19.743046"], ["updated_at", "2015-12-30 21:48:19.743046"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_id", 6], ["body", "Crystals? Caves? Count me in for sure. I'm a sucker for a classic cave book. And crystals? Forget it. This book had me from the minute I opened it. A real page turner."], ["reviewer", "X. Lao"], ["created_at", "2015-12-30 21:48:19.744910"], ["updated_at", "2015-12-30 21:48:19.744910"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["book_id", 7], ["body", "Depressing. Overwraught. Not worth the time or energy to read it. I read the whole thing, and now I regret it."], ["reviewer", "Eric Danforth"], ["created_at", "2015-12-30 21:48:19.746818"], ["updated_at", "2015-12-30 21:48:19.746818"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_id", 8], ["body", "I must have read this book 1,000 times in my life. Each time I read it, I learn something new about the book. And about myself."], ["reviewer", "Jesus G."], ["created_at", "2015-12-30 21:48:19.758000"], ["updated_at", "2015-12-30 21:48:19.758000"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["book_id", 9], ["body", "A great gift for the angsty teen in your life."], ["reviewer", "Remmington Wadsworth"], ["created_at", "2015-12-30 21:48:19.760081"], ["updated_at", "2015-12-30 21:48:19.760081"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_id", 9], ["body", "If you can make it past the brutally gory opening sequence, it's worth reading. Also, there's a lot of eye-roll-inducing romance."], ["reviewer", "Maximillian W.D."], ["created_at", "2015-12-30 21:48:19.761829"], ["updated_at", "2015-12-30 21:48:19.761829"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["book_id", 9], ["body", "The best thing I've read since 50 Shades."], ["reviewer", "Koji Nakamura"], ["created_at", "2015-12-30 21:48:19.763519"], ["updated_at", "2015-12-30 21:48:19.763519"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_id", 10], ["body", "At first it seemed really boring. Then it picked up. Then it got boring again. I couldn't finish it. I gave it to my son, and he thought it was terrific, fwiw."], ["reviewer", "Toby Stubbins"], ["created_at", "2015-12-30 21:48:19.765633"], ["updated_at", "2015-12-30 21:48:19.765633"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["book_id", 11], ["body", "A book about kids waging war? That's messed up. And that's what makes this book so compelling. Also, if you like video games, there are parts that are very video-gamey. Recommend."], ["reviewer", "Hannah P.G."], ["created_at", "2015-12-30 21:48:19.768414"], ["updated_at", "2015-12-30 21:48:19.768414"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_id", 13], ["body", "I've read many other books by this author, so I expected to be blown away by this one. What a let down. Characters are one dimensional. The protagonist is a callow lunatic. Do not recommend."], ["reviewer", "P.J. Merriweather"], ["created_at", "2015-12-30 21:48:19.770207"], ["updated_at", "2015-12-30 21:48:19.770207"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("book_id", "body", "reviewer", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["book_id", 13], ["body", "This book transformed the way I look at fiction. Please don't listen to the critics- it deserves a deep read."], ["reviewer", "M.J. Madden"], ["created_at", "2015-12-30 21:48:19.772307"], ["updated_at", "2015-12-30 21:48:19.772307"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+
+
+Started GET "/" for ::1 at 2015-12-30 13:48:29 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ReadingListsController#index as HTML
+  [1m[35mReadingList Load (0.1ms)[0m  SELECT "reading_lists".* FROM "reading_lists"
+  Rendered reading_lists/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 547ms (Views: 534.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/reading_lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-30 13:48:30 -0800
+
+
+Started GET "/assets/application.self-70b56f53418965899070bacbb0c08dd016278edb7146cb7f5801efacdd046c8b.css?body=1" for ::1 at 2015-12-30 13:48:30 -0800
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-30 13:48:30 -0800
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-30 13:48:30 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-30 13:48:30 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-30 13:48:30 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-30 13:48:30 -0800
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-30 13:48:30 -0800
+
+
+Started GET "/assets/reading_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-30 13:48:30 -0800
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-30 13:48:30 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-30 13:48:30 -0800
+
+
+Started GET "/reading_lists/1" for ::1 at 2015-12-30 13:48:38 -0800
+Processing by ReadingListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReadingList Load (0.1ms)[0m  [1mSELECT  "reading_lists".* FROM "reading_lists" WHERE "reading_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."reading_list_id" = ?  [["reading_list_id", 1]]
+  Rendered reading_lists/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 85ms (Views: 60.8ms | ActiveRecord: 0.6ms)

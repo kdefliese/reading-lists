@@ -9,7 +9,7 @@ class ReadingListsController < ApplicationController
 
   def create
     ReadingList.create(reading_list_params[:reading_list])
-    redirect_to "/"
+    redirect_to root_path
   end
 
   def edit
