@@ -7,6 +7,18 @@ class BooksController < ApplicationController
     @book = Book.new
   end
 
+  def remove
+    id = params["book_id"]
+    @book = Book.find(id)
+    reading_list_id = @book.reading_list.id
+
+    @book.update(
+      reading_list_id: nil
+    )
+
+    redirect_to edit_reading_list_path(reading_list_id)
+  end
+
   def create
     Book.create(book_params[:book])
     redirect_to books_path
