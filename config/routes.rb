@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'reading_lists#index'
   resources :reading_lists
   resources :books do
+    post 'remove' => 'books#remove', as: :remove
     resources :reviews, only: [:new, :create]
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -4,4 +4,13 @@
       <%= f.text_field :name %>
       <%= f.submit value: "#{button_text}", class: "new_button"%>
   <% end %>
+
+  <% if !@reading_list.books.nil? %>
+    <% @reading_list.books.each do |book| %>
+      <%= book.title %>
+      <%= button_to "Remove from list", book_remove_path(book.id), class:"new_button" %>
+
+    <% end %>
+  <% end %>
+
 </div>
