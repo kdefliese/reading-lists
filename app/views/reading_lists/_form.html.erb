@@ -4,12 +4,13 @@
       <%= f.text_field :name %>
       <%= f.submit value: "#{button_text}", class: "new_button"%>
   <% end %>
-
+<br>
+<br>
   <% if !@reading_list.books.nil? %>
     <table>
       <thead>
         <tr>
-          <th>Title</th>
+          <th>Book's Title</th>
           <th>Author</th>
           <th></th>
           <th colspan="3"></th>
